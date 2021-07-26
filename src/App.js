@@ -1,8 +1,11 @@
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
-      '<h1>hello world helloo</h1>'
+      <div>
+        <h1>hello world !</h1>
+      </div>
   );
 }
 
