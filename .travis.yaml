@@ -1,0 +1,10 @@
+sudo: required
+language: generic
+services:
+  - docker
+
+before_install:
+  - docker build -t nourkaroui/docker-react -f Dockerfile-dev .
+
+script:
+  - docker run -e CI=true nourkaroui/docker-react npm run test
