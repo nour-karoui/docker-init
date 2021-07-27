@@ -40,13 +40,13 @@ To run this project, make sure you have docker installed and create an account o
 
 Dockerfile-dev builds an image for developing
 
-#####Running The project
+##### Running The project
 ````shell script
 docker build -t YOUR_DOCKER_ID/docker-react -f Dockerfile-dev .
 docker run -p 3000:3000 YOUR_DOCKER_ID/docker-react
 ````
 
-#####Running Tests
+##### Running Tests
 
 ```shell script
 docker run YOUR_DOCKER_ID/docker-react npm run test
