@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+<h1 align="center">Welcome to Docker React 👋</h1>
+<p>
+  <a href="https://github.com/nour-karoui/docker-init#readme" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/nour-karoui/docker-init/graphs/commit-activity" target="_blank">
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+  <a href="https://github.com/nour-karoui/docker-init/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/bishkou/password-pwnd" />
+  </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### a simple react application to get started with docker and DevOps basics
 
-## Available Scripts
 
-In the project directory, you can run:
+### 🏠 [Homepage](https://github.com/nour-karoui/docker-init)
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+> git clone https://github.com/nour-karoui/docker-init.git
+> cd frontend
+// running the project locally
+> npm i
+> npm start
+```
 
-### `yarn test`
+## How It Works
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In this project, we prepared two dockerfiles, to **build two docker images**, one appropriate for **dev env** and the other one for **prod env**
 
-### `yarn build`
+To run this project, make sure you have docker installed and create an account on [Dockerhub](https://hub.docker.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+***PS***: You won't need any other dependencies installed, not even nodejs. Since the project on a container.
+<hr />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1- Dev Environment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Dockerfile-dev builds an image for developing
+######Running The project
+````shell script
+docker build -t YOUR_DOCKER_ID/docker-react -f Dockerfile-dev .
+docker run -p 3000:3000 YOUR_DOCKER_ID/docker-react
+````
 
-### `yarn eject`
+######Running Tests
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell script
+docker run YOUR_DOCKER_ID/docker-react npm run test
+```
+<hr />
+Since building a docker image means taking a snapshot of the current source code, later changes won't be detected in the docker container.
+We configured the docker compose file so that local changes will be automatically propagated to the docker container.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+&nbsp;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**So instead of**
+```shell script
+docker run -p 3000:3000 YOUR_DOCKER_ID/docker-react
+``` 
+**We simply write**
+```shell script
+docker-compose up
+``` 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<hr />
 
-## Learn More
+### 2- Prod Environment
+Dockerfile-prod builds an image for production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+````shell script
+docker build -t YOUR_DOCKER_ID/docker-react-prod -f Dockerfile-prod .
+docker run YOUR_DOCKER_ID/docker-react-prod
+````
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3- Github & Travis CI
+Each time we push our code to the github repo, Travis CI is triggered to run the build a docker image and run the container to execute the tests and make sure everything works properly.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Author
 
-### Analyzing the Bundle Size
+👤 **Nour**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Github: [@nour-karoui](https://github.com/nour-karoui)
+* LinkedIn: [@nourkaroui](https://www.linkedin.com/in/nourkaroui/)
 
-### Making a Progressive Web App
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/nour-karoui/docker-init/issues). You can also take a look at the [contributing guide](https://github.com/nour-karoui/docker-init/blob/master/CONTRIBUTING.md).
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a [STAR](https://github.com/nour-karoui/docker-init) if this project helped you!
 
-### Deployment
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Copyright © 2021 [Nour](https://github.com/nour-karoui).
+* This project is [MIT](https://github.com/nour-karoui/mongoose-soft-delete/blob/master/LICENSE) licensed.
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+***
+_This README was generated with by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
