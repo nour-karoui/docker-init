@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Docker React 👋</h1>
+<h1 align="center">Welcome to Docker Init 👋</h1>
 <p>
   <a href="https://github.com/nour-karoui/docker-init#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
@@ -39,13 +39,14 @@ To run this project, make sure you have docker installed and create an account o
 ### 1- Dev Environment
 
 Dockerfile-dev builds an image for developing
-######Running The project
+
+#####Running The project
 ````shell script
 docker build -t YOUR_DOCKER_ID/docker-react -f Dockerfile-dev .
 docker run -p 3000:3000 YOUR_DOCKER_ID/docker-react
 ````
 
-######Running Tests
+#####Running Tests
 
 ```shell script
 docker run YOUR_DOCKER_ID/docker-react npm run test
@@ -75,9 +76,12 @@ docker build -t YOUR_DOCKER_ID/docker-react-prod -f Dockerfile-prod .
 docker run YOUR_DOCKER_ID/docker-react-prod
 ````
 
+<hr />
+
 ### 3- Github & Travis CI
 Each time we push our code to the github repo, Travis CI is triggered to run the build a docker image and run the container to execute the tests and make sure everything works properly.
 
+<hr />
 
 ## Author
 
@@ -97,7 +101,7 @@ Give a [STAR](https://github.com/nour-karoui/docker-init) if this project helped
 ## 📝 License
 
 * Copyright © 2021 [Nour](https://github.com/nour-karoui).
-* This project is [MIT](https://github.com/nour-karoui/mongoose-soft-delete/blob/master/LICENSE) licensed.
+* This project is [MIT](https://github.com/nour-karoui/docker-init/blob/master/LICENSE) licensed.
 
 ***
 _This README was generated with by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
