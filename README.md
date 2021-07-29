@@ -69,10 +69,10 @@ docker-compose up
 <hr />
 
 ### 2- Prod Environment
-Dockerfile-prod builds an image for production
+Dockerfile builds an image for production
 
 ````shell script
-docker build -t YOUR_DOCKER_ID/docker-react-prod -f Dockerfile-prod .
+docker build -t YOUR_DOCKER_ID/docker-react-prod .
 docker run YOUR_DOCKER_ID/docker-react-prod
 ````
 
